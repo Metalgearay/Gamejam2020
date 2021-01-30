@@ -18,8 +18,8 @@ func _ready():
 #	pass
 
 func circle_spawn(x,y):
-	print("here")
-	print(x,y)
+#	print("here")
+#	print(x,y)
 	var count = 12
 	var radius = 100.0
 	var center = Vector2(x, y)
@@ -31,17 +31,12 @@ func circle_spawn(x,y):
 	var angle = 0
 # For each node to spawn
 	for i in range(0, count):
-
 		var direction = Vector2(cos(angle), sin(angle))
 		var pos = center + direction * radius
 		var node = b.instance()
-		if count <= 4:
-			node.init("LEFT", 400, pos)
-		if count <= 8:
-			node.init("UP", 400, pos)
-		if count <= 13:
-			node.init("RIGHT", 400, pos)
+		node.init(direction, 400)
+
 		add_child(node)
 
 	# Rotate one step
-	angle += angle_step
+		angle += angle_step

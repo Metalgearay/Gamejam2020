@@ -8,8 +8,6 @@ var move_direction = Vector2(0,0)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-#func _physics_process(delta):
 	move_loop()
 
 func move_loop():
@@ -17,6 +15,7 @@ func move_loop():
 	move_direction.y = (int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("ui_up"))/float(2))
 	var motion = move_direction.normalized() * speed
 	move_and_slide(motion)
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	move_loop()
