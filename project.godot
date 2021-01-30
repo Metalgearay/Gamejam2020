@@ -23,9 +23,20 @@ _global_script_class_icons={
 config/name="Bullet Hell"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/width=900
+window/stretch/aspect="keep"
+
 [gdnative]
 
 singletons=[ "res://git_api.gdnlib" ]
+
+[layer_names]
+
+2d_render/layer_1="Player"
+2d_render/layer_2="enemies"
+2d_render/layer_3="bullets"
 
 [rendering]
 
