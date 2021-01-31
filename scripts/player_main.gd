@@ -1,6 +1,8 @@
 extends KinematicBody2D
+var ending = preload("res://ending.tscn")
 export var speed = 400
 var direction
+var done = false
 var launched = {"up":false, "right":false, "down": false, "left":false}
 # Declare member variables here. Examples:
 # var a = 2
@@ -76,5 +78,7 @@ func _physics_process(delta):
 	jetteson()
 
 func _process(delta):
-	if health <=0:
-		return get_tree().change_scene("res://ending.tscn")
+	if health <=0 and not done:
+		var e = ending.instance()
+		get_tree().get_root().add_child(e)
+		done = true

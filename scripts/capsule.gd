@@ -22,6 +22,7 @@ func is_ejected():
 func _process(delta):
 	if ejecting == true:
 		if self.position.y > -600 or self.position.y<960:
+			self.get_children()[0].set_frame(1)
 			move_and_slide(direction*400)
 		else:
 			ejecting = false
