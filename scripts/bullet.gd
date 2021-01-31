@@ -13,7 +13,7 @@ func init(input_direction, input_speed, input_pos):
 	pos = input_pos
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	connect("area_enter", self, "_on_area_enter")
+	pass
 
 func _process(delta):
 	var overlapping = get_overlapping_bodies()

@@ -6,7 +6,6 @@ extends Node2D
 # var b = "text"
 var bullet_origin
 var b = preload("res://bullet.tscn")
-onready var player = get_node("root/player/main")
 var type = "circle"
 
 var pos = Vector2(0,0)
