@@ -34,7 +34,7 @@ texture = ExtResource( 1 )
 hframes = 9
 
 [node name="top_capsule" type="KinematicBody2D" parent="."]
-collision_mask = 14
+collision_mask = 2147483662
 script = ExtResource( 7 )
 
 [node name="angsty_teen" type="Sprite" parent="top_capsule"]
@@ -91,7 +91,7 @@ shape = SubResource( 4 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
 shape = SubResource( 5 )
-[connection signal="eject" from="." to="right_capsule" method="_on_Ship_eject"]
 [connection signal="eject" from="." to="bot_capsule" method="_on_Ship_eject"]
-[connection signal="eject" from="." to="left_capsule" method="_on_Ship_eject"]
 [connection signal="eject" from="." to="top_capsule" method="_on_Ship_eject"]
+[connection signal="eject" from="." to="left_capsule" method="_on_Ship_eject"]
+[connection signal="eject" from="." to="right_capsule" method="_on_Ship_eject"]

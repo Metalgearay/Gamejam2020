@@ -14,26 +14,21 @@ func _ready():
 
 func jetteson():
 	var pod_to_eject = ""
-	var log_text = get_tree().get_root().get_node("MainGame/GUI-Helper/GUI_Side/TextureRect/RichTextLabel")
 	if Input.is_action_pressed("eject_up") and not launched["up"]:
 		pod_to_eject = $top_capsule
 		direction = Vector2(0, -1)
-		log_text.append_bbcode("\n[color=#0F0]Angsty Chris ejected![/color]\n")
 		launched["up"] = true
 	if Input.is_action_pressed("eject_right") and not launched["right"]:
 		pod_to_eject = $right_capsule
 		direction = Vector2(1, 0)
-		log_text.append_bbcode("\n[color=#0F0]Little Timmy ejected![/color]\n")
 		launched["right"] = true
 	if Input.is_action_pressed("eject_down")and not launched["down"]:
 		pod_to_eject = $bot_capsule
 		direction = Vector2(0, 1)
-		log_text.append_bbcode("\n[color=#0F0]Little Cindy ejected![/color]\n")
 		launched["down"] = true
 	if Input.is_action_pressed("eject_left")and not launched["left"]:
 		pod_to_eject = $left_capsule
 		direction = Vector2(-1, 0)
-		log_text.append_bbcode("\n[color=#0F0]Dr. Buccatelli ejected![/color]\n")
 		launched["left"] = true
 	if pod_to_eject:
 		emit_signal("eject", pod_to_eject, direction)

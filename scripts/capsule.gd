@@ -39,5 +39,7 @@ func _on_Ship_eject(pod_name, direction_move):
 			var old_parent = self.get_parent()
 			old_parent.remove_child(self)
 			ship_origin.add_child(self)
-			self.collision_layer = 5
-	
+			self.add_collision_exception_with(get_node("/root/MainGame/top"))
+			self.add_collision_exception_with(get_node("/root/MainGame/bottom"))
+			self.add_collision_exception_with(get_node("/root/MainGame/left"))
+			self.add_collision_exception_with(get_node("/root/MainGame/right"))
