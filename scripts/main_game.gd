@@ -18,6 +18,6 @@ func _on_MobTimer_timeout():
 	print("time out")
 	# Create a Mob instance and add it to the scene.
 	var mob = Mob.instance()
-	mob.position =  Vector2(rand_range(0,600),-100)
+	mob.position =  Vector2(rand_range(100,600),-100)
 	mob.set_direction(Vector2(0,100))
 	get_parent().add_child(mob)

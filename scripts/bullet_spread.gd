@@ -35,8 +35,8 @@ func circle_spawn(x,y):
 		var direction = Vector2(cos(angle), sin(angle))
 		var pos = center + direction * radius
 		var node = b.instance()
-		node.init(direction, 100)
-		add_child(node)
+		node.init(direction, 100, pos)
+		get_parent().add_child(node)
 
 	# Rotate one step
 		angle += angle_step

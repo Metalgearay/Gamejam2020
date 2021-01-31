@@ -1,22 +1,27 @@
-extends KinematicBody2D
+extends Area2D
 var speed = 0
-
+var pos = Vector2(0,0)
 var direction = Vector2(0,0)
+var state = 0
 
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-func init(input_direction, input_speed):
+func init(input_direction, input_speed, input_pos):
 	speed = input_speed
-	direction = input_direction.normalized()
-
+	direction = input_direction
+	pos = input_pos
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
-func _physics_process(delta):
-	# check if otuside and kill
-	var x_pos = get_global_position().x
-	if x_pos < 0 or x_pos > 900:
-		get_parent().remove_child(self)
-	move_and_slide(direction * speed)
-	 
+
+func _process(delta):
+	pos = self.position
+	if pos.x > get_viewport().size.x or pos.y > get_viewport().size.y:
+			state = -1
+	if state == -1:
+		set_process(false)
+		queue_free()
+		return
+	pos += direction * speed * delta
+	self.position = pos
