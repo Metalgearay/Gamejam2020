@@ -12,7 +12,18 @@ func _ready():
 
 func move_loop():
 	move_direction.x = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"))
-	move_direction.y = (int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("ui_up"))/float(2))
+	move_direction.y = int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("ui_up"))
+	
+	$main.set_frame(0)
+	if move_direction.x > 0:
+		$main.set_frame(4)
+	if move_direction.x < 0:
+		$main.set_frame(3)
+	if move_direction.y > 0:
+		$main.set_frame(2)
+	if move_direction.y < 0:
+		$main.set_frame(1)
+	
 	var motion = move_direction.normalized() * speed
 	move_and_slide(motion)
 

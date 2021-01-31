@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sPlayer.png-ae67a99d33b0353d0b53439fc91495d9.stex"
+path="res://.import/dr_buccatelli.png-bc66a80cb4e04d03b09298963c622266.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sPlayer.png"
-dest_files=[ "res://.import/sPlayer.png-ae67a99d33b0353d0b53439fc91495d9.stex" ]
+source_file="res://assets/dr_buccatelli.png"
+dest_files=[ "res://.import/dr_buccatelli.png-bc66a80cb4e04d03b09298963c622266.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -30,5 +30,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0
