@@ -5,22 +5,30 @@ var points
 var direction = Vector2(0,0)
 var speed = 120
 var exit_side = "Right"
+var flag = false
 var bullets_fired = false
+
 var timer
 func set_direction(vec):
 	direction = vec.normalized()
 # Called when the node enters the scene tree for the first time.
 func _ready():
-#	timer = Timer.new()
-#	timer.set_wait_time(1)
-#	timer.connect("timeout", self, "_on_timer_timeout")
-#	add_child(timer)
-#	timer.start()
-	
+	#timer = Timer.new()
+	#timer.set_wait_time(1)
+	#timer.connect("timeout", self, "_on_timer_timeout")
+	#timer.one_shot = true
+	#add_child(timer)
+	#timer.start()
 	if position.x < 400:
 		exit_side = "Left"
 		
 func _physics_process(delta):
+	#if flag == false and position.x <400:
+	#	move_and_slide(Vector2(0,0))
+	#	var p = pattern.instance()
+	#	add_child(p)
+	#	p.set_pos(position)
+	#	flag = true 
 	if position.y > 0:
 		if exit_side == "Right":	
 			direction = direction.move_toward(Vector2(1,0),0.006)
