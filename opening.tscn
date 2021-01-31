@@ -1,19 +1,25 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scripts/opening.gd" type="Script" id=1]
+[ext_resource path="res://assets/opening.png" type="Texture" id=2]
 
 [sub_resource type="Theme" id=1]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = 150.0
-margin_top = 150.0
-margin_right = 750.0
-margin_bottom = 450.0
+margin_left = 78.0
+margin_top = 85.0
+margin_right = 624.0
+margin_bottom = 444.0
+rect_scale = Vector2( 2, 2 )
 theme = SubResource( 1 )
 bbcode_enabled = true
-bbcode_text = "[b]Captain’s Log 83:[/b]
+bbcode_text = "[color=#0F0]...
+...
+...
+
+Captain’s Log 83:
 
 We have some good news, and some bad news…
 
@@ -23,12 +29,17 @@ The bad news is, well, we’ve encountered some extraterrestrials. And they aren
 
 I just hope everyone can make it to the end, but if sacrifices need to be made, we'll have to make them. 
 
-We've lost too much to turn back now!
+We've lost too much to turn back now![/color]
 
 
-[color=#777777][center] Press enter to begin[/center][/color]
+
+[color=#777777][center] Press [enter] to begin.[/center][/color]
 "
-text = "Captain’s Log 83:
+text = "...
+...
+...
+
+Captain’s Log 83:
 
 We have some good news, and some bad news…
 
@@ -41,10 +52,16 @@ I just hope everyone can make it to the end, but if sacrifices need to be made, 
 We've lost too much to turn back now!
 
 
- Press enter to begin
+
+ Press [enter] to begin.
 "
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": ""
 }
+
+[node name="background" type="Sprite" parent="."]
+z_index = -5
+texture = ExtResource( 2 )
+centered = false
