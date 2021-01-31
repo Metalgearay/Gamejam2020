@@ -18,5 +18,6 @@ func _physics_process(delta):
 	var x_pos = get_global_position().x
 	if x_pos < 0 or x_pos > 900:
 		get_parent().remove_child(self)
-	move_and_slide(direction * speed)
+	else:
+		move_and_slide(direction * speed)
 	 
