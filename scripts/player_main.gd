@@ -1,6 +1,7 @@
 extends KinematicBody2D
 export var speed = 400
 var direction
+var launched = {"up":false, "right":false, "down": false, "left":false}
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -13,18 +14,22 @@ func _ready():
 
 func jetteson():
 	var pod_to_eject = ""
-	if Input.is_action_pressed("eject_up"):
+	if Input.is_action_pressed("eject_up") and not launched["up"]:
 		pod_to_eject = $top_capsule
 		direction = Vector2(0, -1)
-	if Input.is_action_pressed("eject_right"):
+		launched["up"] = true
+	if Input.is_action_pressed("eject_right") and not launched["right"]:
 		pod_to_eject = $right_capsule
 		direction = Vector2(1, 0)
-	if Input.is_action_pressed("eject_down"):
+		launched["right"] = true
+	if Input.is_action_pressed("eject_down")and not launched["down"]:
 		pod_to_eject = $bot_capsule
 		direction = Vector2(0, 1)
-	if Input.is_action_pressed("eject_left"):
+		launched["down"] = true
+	if Input.is_action_pressed("eject_left")and not launched["left"]:
 		pod_to_eject = $left_capsule
 		direction = Vector2(-1, 0)
+		launched["left"] = true
 	if pod_to_eject:
 		emit_signal("eject", pod_to_eject, direction)
 func move_loop():
