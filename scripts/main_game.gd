@@ -13,6 +13,7 @@ func _process(delta):
 	if just_started:
 		_on_MobTimer_timeout()
 		just_started = false
+		$Main.position = $PlayerPosition.position
 
 func _on_MobTimer_timeout():
 	# Create a Mob instance and add it to the scene.
