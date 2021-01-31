@@ -9,7 +9,7 @@ var state = 0
 # var b = "text"
 func init(input_direction, input_speed, input_pos):
 	speed = input_speed
-	direction = input_direction
+	direction = input_direction.normalized()
 	pos = input_pos
 # Called when the node enters the scene tree for the first time.
 func _ready():
