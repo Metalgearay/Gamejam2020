@@ -6,15 +6,14 @@ var direction
 # var b = "text"
 signal eject(pod_name)
 var move_direction = Vector2(0,0)
-var health = 10
+export var health = 10
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	move_loop()
+	pass
 
 func jetteson():
 	var pod_to_eject = ""
 	if Input.is_action_pressed("eject_up"):
-		print("here")
 		pod_to_eject = $top_capsule
 		direction = Vector2(0, -1)
 	if Input.is_action_pressed("eject_right"):
@@ -29,7 +28,7 @@ func jetteson():
 	if pod_to_eject:
 		emit_signal("eject", pod_to_eject, direction)
 func move_loop():
-	#print(health)111111
+	#print(health)
 	move_direction.x = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"))
 	move_direction.y = int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("ui_up"))
 	
@@ -61,8 +60,7 @@ func move_loop():
 		
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+
+func _physics_process(delta):
 	move_loop()
 	jetteson()
-func _on_body_entered(body):
-	print (body)

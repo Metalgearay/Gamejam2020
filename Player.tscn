@@ -90,6 +90,6 @@ shape = SubResource( 4 )
 z_index = 1
 shape = SubResource( 5 )
 [connection signal="eject" from="." to="left_capsule" method="_on_Ship_eject"]
-[connection signal="eject" from="." to="top_capsule" method="_on_Ship_eject"]
 [connection signal="eject" from="." to="right_capsule" method="_on_Ship_eject"]
 [connection signal="eject" from="." to="bot_capsule" method="_on_Ship_eject"]
+[connection signal="eject" from="." to="top_capsule" method="_on_Ship_eject"]
