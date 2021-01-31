@@ -21,7 +21,7 @@ func _process(delta):
 		if x.name == "Ship":
 			x.health -=1
 			state = -1
-		elif "capsule" in x.name:
+		elif "capsule" in x.name and x.get_parent().name == "Ship":
 			x.get_parent().health -=1
 			state = -1
 			

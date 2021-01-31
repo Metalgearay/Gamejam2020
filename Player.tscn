@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/player.png" type="Texture" id=1]
 [ext_resource path="res://assets/little_cindy.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/angsty_teen.png" type="Texture" id=4]
 [ext_resource path="res://assets/dr_buccatelli.png" type="Texture" id=5]
 [ext_resource path="res://assets/little_timmy.png" type="Texture" id=6]
+[ext_resource path="res://scripts/capsule.gd" type="Script" id=7]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 20.9402
@@ -33,7 +34,8 @@ texture = ExtResource( 1 )
 hframes = 9
 
 [node name="top_capsule" type="KinematicBody2D" parent="."]
-collision_mask = 6
+collision_mask = 14
+script = ExtResource( 7 )
 
 [node name="angsty_teen" type="Sprite" parent="top_capsule"]
 position = Vector2( -0.0245819, -53.0703 )
@@ -45,7 +47,8 @@ position = Vector2( 0.057461, -61.587 )
 shape = SubResource( 1 )
 
 [node name="left_capsule" type="KinematicBody2D" parent="."]
-collision_mask = 6
+collision_mask = 14
+script = ExtResource( 7 )
 
 [node name="little_cindy" type="Sprite" parent="left_capsule"]
 position = Vector2( -53.141, -0.0594406 )
@@ -57,7 +60,8 @@ position = Vector2( -61.387, -0.477428 )
 shape = SubResource( 2 )
 
 [node name="right_capsule" type="KinematicBody2D" parent="."]
-collision_mask = 6
+collision_mask = 14
+script = ExtResource( 7 )
 
 [node name="little_timmy" type="Sprite" parent="right_capsule"]
 position = Vector2( 53.5951, 3.8147e-06 )
@@ -69,7 +73,8 @@ position = Vector2( 61.8784, -0.369186 )
 shape = SubResource( 3 )
 
 [node name="bot_capsule" type="KinematicBody2D" parent="."]
-collision_mask = 6
+collision_mask = 14
+script = ExtResource( 7 )
 
 [node name="dr_buccatelli" type="Sprite" parent="bot_capsule"]
 position = Vector2( 0, 53 )
@@ -84,3 +89,7 @@ shape = SubResource( 4 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
 shape = SubResource( 5 )
+[connection signal="eject" from="." to="left_capsule" method="_on_Ship_eject"]
+[connection signal="eject" from="." to="top_capsule" method="_on_Ship_eject"]
+[connection signal="eject" from="." to="right_capsule" method="_on_Ship_eject"]
+[connection signal="eject" from="." to="bot_capsule" method="_on_Ship_eject"]

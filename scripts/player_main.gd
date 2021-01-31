@@ -1,16 +1,35 @@
 extends KinematicBody2D
 export var speed = 400
+var direction
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
+signal eject(pod_name)
 var move_direction = Vector2(0,0)
 var health = 10
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	move_loop()
 
+func jetteson():
+	var pod_to_eject = ""
+	if Input.is_action_pressed("eject_up"):
+		print("here")
+		pod_to_eject = $top_capsule
+		direction = Vector2(0, -1)
+	if Input.is_action_pressed("eject_right"):
+		pod_to_eject = $right_capsule
+		direction = Vector2(1, 0)
+	if Input.is_action_pressed("eject_down"):
+		pod_to_eject = $bot_capsule
+		direction = Vector2(0, 1)
+	if Input.is_action_pressed("eject_left"):
+		pod_to_eject = $left_capsule
+		direction = Vector2(-1, 0)
+	if pod_to_eject:
+		emit_signal("eject", pod_to_eject, direction)
 func move_loop():
-	print(health)
+	#print(health)111111
 	move_direction.x = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"))
 	move_direction.y = int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("ui_up"))
 	
@@ -44,5 +63,6 @@ func move_loop():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	move_loop()
+	jetteson()
 func _on_body_entered(body):
 	print (body)

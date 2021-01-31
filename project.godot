@@ -28,11 +28,43 @@ config/icon="res://icon.png"
 
 window/size/width=1280
 window/size/height=960
+window/size/resizable=false
 window/stretch/aspect="keep"
 
 [gdnative]
 
 singletons=[ "res://git_api.gdnlib" ]
+
+[input]
+
+ui_accept={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777221,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777222,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+eject_up={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":49,"unicode":0,"echo":false,"script":null)
+ ]
+}
+eject_right={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":50,"unicode":0,"echo":false,"script":null)
+ ]
+}
+eject_down={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":51,"unicode":0,"echo":false,"script":null)
+ ]
+}
+eject_left={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":52,"unicode":0,"echo":false,"script":null)
+ ]
+}
 
 [layer_names]
 
@@ -45,4 +77,5 @@ singletons=[ "res://git_api.gdnlib" ]
 
 [rendering]
 
+environment/default_clear_color=Color( 0.0156863, 0.0156863, 0.0156863, 1 )
 environment/default_environment="res://default_env.tres"
