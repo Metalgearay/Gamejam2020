@@ -15,7 +15,7 @@ script = ExtResource( 1 )
 process_mode = 0
 wait_time = 4.0
 
-[node name="Main" parent="." instance=ExtResource( 2 )]
+[node name="player" parent="." instance=ExtResource( 2 )]
 position = Vector2( -415.031, 259.207 )
 
 [node name="PlayerPosition" type="Position2D" parent="."]
