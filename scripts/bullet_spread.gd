@@ -54,7 +54,7 @@ func circle_spawn(x,y):
 func arc_spawn(x,y):
 #	print("here")
 #	print(x,y)
-	var count = 4
+	var count = 6
 	var radius = 100.0
 	var center = Vector2(x, y)
 
