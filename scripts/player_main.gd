@@ -3,6 +3,7 @@ var ending = preload("res://ending.tscn")
 export var speed = 400
 var direction
 var done = false
+var time_elapsed = 0
 var launched = {"up":false, "right":false, "down": false, "left":false}
 # Declare member variables here. Examples:
 # var a = 2
@@ -74,11 +75,14 @@ func move_loop():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
 func _physics_process(delta):
+	
 	move_loop()
 	jetteson()
 
 func _process(delta):
-	if health <=0 and not done:
+	time_elapsed += 1
+
+	if (health <=0 or time_elapsed > 3600) and not done:
 		var e = ending.instance()
 		get_tree().get_root().add_child(e)
 		done = true

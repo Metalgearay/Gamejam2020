@@ -14,11 +14,11 @@ centered = false
 [node name="RichTextLabel" type="RichTextLabel" parent="ending_log"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 92.0
-margin_top = 66.7564
-margin_right = -638.0
-margin_bottom = -511.244
-rect_scale = Vector2( 2, 2 )
+margin_left = 181.564
+margin_top = 84.5383
+margin_right = -865.436
+margin_bottom = -698.462
+rect_scale = Vector2( 4, 4 )
 bbcode_enabled = true
 bbcode_text = "[color=#0F0]Log ... [/color]
 "

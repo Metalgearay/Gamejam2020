@@ -32,9 +32,11 @@ func _ready():
 		ending_text += "Little Timmy, "
 
 	
-	if num_lost == 0:
+	if num_lost == 0 and health > 0:
 		ending_text += "No one!"
-	if num_lost == 4 and health == 0:
+	if num_lost == 4 and health >0:
+		ending_text = "[color=#0f0]\nYou lost:\n\n      Everyone."
+	if health == 0:
 		ending_text = "[color=#0f0]\nYou lost:\n\n      Everything."
 	
 	if health > 0:
@@ -42,11 +44,11 @@ func _ready():
 	else:
 		ending_text += "\n\nYou found:\n\n      Nothing."
 	ending_text += "[/color]"
-	
+	print(ending_text)
 	get_tree().get_root().get_node("ending/ending_log/RichTextLabel").append_bbcode(ending_text)
 	
-func _physics_process(delta):
-	lapsed += 5*delta
+func _process(delta):
+	lapsed += delta
 	$ending_log/RichTextLabel.visible_characters = lapsed/0.1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
