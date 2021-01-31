@@ -13,9 +13,11 @@ func _ready():
 
 func jetteson():
 	var pod_to_eject = ""
+	var log_text = get_tree().get_root().get_node("MainGame/GUI-Helper/GUI_Side/TextureRect/RichTextLabel")
 	if Input.is_action_pressed("eject_up"):
 		pod_to_eject = $top_capsule
 		direction = Vector2(0, -1)
+		log_text.append_bbcode("Angsty teen ejected!")
 	if Input.is_action_pressed("eject_right"):
 		pod_to_eject = $right_capsule
 		direction = Vector2(1, 0)
@@ -27,6 +29,7 @@ func jetteson():
 		direction = Vector2(-1, 0)
 	if pod_to_eject:
 		emit_signal("eject", pod_to_eject, direction)
+		
 func move_loop():
 	#print(health)
 	move_direction.x = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"))
