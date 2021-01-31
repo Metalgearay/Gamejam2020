@@ -6,21 +6,22 @@ extends Node2D
 # var b = "text"
 
 var b = preload("res://bullet.tscn")
-func spawn(x,y):
-	circle_spawn(x,y)
+
+var type = "circle"
+
+var pos = Vector2(0,0)
+
+func set_pos(vec):
+	pos = vec
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+	if type == "circle":
+		circle_spawn(pos.x, pos.y)
 
 func circle_spawn(x,y):
 #	print("here")
 #	print(x,y)
-	var count = 12
+	var count = 9
 	var radius = 100.0
 	var center = Vector2(x, y)
 
@@ -34,8 +35,7 @@ func circle_spawn(x,y):
 		var direction = Vector2(cos(angle), sin(angle))
 		var pos = center + direction * radius
 		var node = b.instance()
-		node.init(direction, 400)
-
+		node.init(direction, 100)
 		add_child(node)
 
 	# Rotate one step
