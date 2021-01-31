@@ -16,13 +16,26 @@ func move_loop():
 	
 	$main.set_frame(0)
 	if move_direction.x > 0:
-		$main.set_frame(4)
-	if move_direction.x < 0:
-		$main.set_frame(3)
-	if move_direction.y > 0:
-		$main.set_frame(2)
-	if move_direction.y < 0:
-		$main.set_frame(1)
+		if move_direction.y > 0:
+			$main.set_frame(6)
+		elif move_direction.y <0:
+			$main.set_frame(5)
+		else:
+			$main.set_frame(4)
+	elif move_direction.x < 0:
+		if move_direction.y > 0:
+			$main.set_frame(8)
+		elif move_direction.y <0:
+			$main.set_frame(7)
+		else:
+			$main.set_frame(3)
+	else:
+		if move_direction.y > 0:
+			$main.set_frame(2)
+		elif move_direction.y <0:
+			$main.set_frame(1)
+		else:
+			$main.set_frame(0)
 	
 	var motion = move_direction.normalized() * speed
 	move_and_slide(motion)

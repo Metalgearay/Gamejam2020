@@ -28,7 +28,7 @@ script = ExtResource( 3 )
 
 [node name="main" parent="." instance=ExtResource( 1 )]
 z_index = 1
-hframes = 5
+hframes = 9
 
 [node name="up" type="KinematicBody2D" parent="."]
 collision_mask = 6
