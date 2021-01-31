@@ -26,7 +26,8 @@ config/icon="res://icon.png"
 
 [display]
 
-window/size/width=900
+window/size/width=1280
+window/size/height=960
 window/stretch/aspect="keep"
 
 [gdnative]
@@ -36,10 +37,12 @@ singletons=[ "res://git_api.gdnlib" ]
 [layer_names]
 
 2d_render/layer_1="Player"
+2d_physics/layer_1="player"
 2d_render/layer_2="enemies"
+2d_physics/layer_2="enemy"
 2d_render/layer_3="bullets"
+2d_physics/layer_3="bullet"
 
 [rendering]
 
-environment/default_clear_color=Color( 0, 0, 0, 1 )
 environment/default_environment="res://default_env.tres"

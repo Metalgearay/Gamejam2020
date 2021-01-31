@@ -6,7 +6,7 @@ extends Node2D
 # var b = "text"
 var bullet_origin
 var b = preload("res://bullet.tscn")
-
+onready var player = get_node("root/player/main")
 var type = "circle"
 
 var pos = Vector2(0,0)
@@ -46,7 +46,12 @@ func circle_spawn(x,y):
 		var direction = Vector2(cos(angle), sin(angle))
 		var pos = center + direction * radius
 		var node = b.instance()
+<<<<<<< HEAD
 		node.init(direction, 200, center)
+=======
+		b.connect("body_entered", player, "_on_body_entered")
+		node.init(direction, 200, pos)
+>>>>>>> origin/GUI_box
 		bullet_origin.add_child(node)
 
 	# Rotate one step
@@ -69,7 +74,12 @@ func arc_spawn(x,y):
 		var direction = Vector2(cos(angle), sin(angle))
 		var pos = center + direction * radius
 		var node = b.instance()
+<<<<<<< HEAD
 		node.init(direction, 200, center)
+=======
+		node.connect("body_entered", player, "_on_body_entered")
+		node.init(direction, 200, pos)
+>>>>>>> origin/GUI_box
 		bullet_origin.add_child(node)
 
 	# Rotate one step

@@ -1,7 +1,19 @@
+<<<<<<< HEAD
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scripts/main_game.gd" type="Script" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+=======
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scripts/main_game.gd" type="Script" id=1]
+[ext_resource path="res://player.tscn" type="PackedScene" id=2]
+
+[sub_resource type="OpenSimplexNoise" id=1]
+
+[sub_resource type="NoiseTexture" id=2]
+noise = SubResource( 1 )
+>>>>>>> origin/GUI_box
 
 [node name="MainGame" type="Node2D"]
 script = ExtResource( 1 )
@@ -10,5 +22,74 @@ script = ExtResource( 1 )
 process_mode = 0
 wait_time = 4.0
 
+<<<<<<< HEAD
 [node name="Ship" parent="." instance=ExtResource( 2 )]
+=======
+[node name="player" parent="." instance=ExtResource( 2 )]
+position = Vector2( -415.031, 259.207 )
+
+[node name="PlayerPosition" type="Position2D" parent="."]
+position = Vector2( 445.449, 511.376 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="GUI_Side" type="MarginContainer" parent="."]
+margin_left = 768.0
+margin_top = 2.0
+margin_right = 1280.0
+margin_bottom = 962.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="GUI_Side"]
+margin_right = 512.0
+margin_bottom = 960.0
+texture = SubResource( 2 )
+expand = true
+
+[node name="Bars" type="VBoxContainer" parent="GUI_Side"]
+margin_right = 512.0
+margin_bottom = 960.0
+
+[node name="Bar" type="HBoxContainer" parent="GUI_Side/Bars"]
+margin_right = 512.0
+margin_bottom = 83.0
+
+[node name="Counter" type="MarginContainer" parent="GUI_Side/Bars/Bar"]
+margin_right = 100.0
+margin_bottom = 83.0
+
+[node name="background" type="NinePatchRect" parent="GUI_Side/Bars/Bar/Counter"]
+margin_right = 100.0
+margin_bottom = 83.0
+rect_min_size = Vector2( 100, 40 )
+draw_center = false
+region_rect = Rect2( -8.35382, -25.6837, 167.416, 98.0579 )
+patch_margin_top = 83
+patch_margin_right = 45
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="TextureRect" type="TextureRect" parent="GUI_Side/Bars/Bar/Counter/background"]
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="GUI_Side/Bars/Bar/Counter/background"]
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Area2D" type="StaticBody2D" parent="."]
+position = Vector2( 1025.05, 479.6 )
+scale = Vector2( 25.6354, 47.6385 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2( 0, 0.0501289 )
+scale = Vector2( 1, 0.996906 )
+build_mode = 1
+polygon = PoolVector2Array( -9.97497, 9.97732, -10.0369, -9.98244, 9.84011, -10.0491, 9.96396, 10.1439 )
+>>>>>>> origin/GUI_box
 [connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]

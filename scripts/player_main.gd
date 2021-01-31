@@ -1,6 +1,5 @@
 extends KinematicBody2D
 export var speed = 400
-
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -39,9 +38,11 @@ func move_loop():
 			$player.set_frame(0)
 	
 	var motion = move_direction.normalized() * speed
-	move_and_slide(motion)
+	var collide_info = move_and_slide(motion)
+		
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	move_loop()
-
+func _on_body_entered(body):
+	print (body)
