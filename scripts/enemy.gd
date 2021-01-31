@@ -17,7 +17,7 @@ func _ready():
 #	add_child(timer)
 #	timer.start()
 	
-	if position.x > 400:
+	if position.x < 400:
 		exit_side = "Left"
 		
 func _physics_process(delta):
