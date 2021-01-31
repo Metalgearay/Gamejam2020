@@ -23,60 +23,61 @@ radius = 21.3456
 extents = Vector2( 27.0902, 25.2913 )
 
 [node name="Main" type="KinematicBody2D"]
+position = Vector2( 446.87, 484.509 )
 collision_mask = 6
 script = ExtResource( 3 )
 
-[node name="main" type="Sprite" parent="."]
+[node name="player" type="Sprite" parent="."]
 z_index = 1
 texture = ExtResource( 1 )
 hframes = 9
 
-[node name="up" type="KinematicBody2D" parent="."]
+[node name="top_capsule" type="KinematicBody2D" parent="."]
 collision_mask = 6
 
-[node name="angsty_teen" type="Sprite" parent="up"]
+[node name="angsty_teen" type="Sprite" parent="top_capsule"]
 position = Vector2( -0.0245819, -53.0703 )
 texture = ExtResource( 4 )
 hframes = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="up"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="top_capsule"]
 position = Vector2( 0.057461, -61.587 )
 shape = SubResource( 1 )
 
-[node name="left" type="KinematicBody2D" parent="."]
+[node name="left_capsule" type="KinematicBody2D" parent="."]
 collision_mask = 6
 
-[node name="little_cindy" type="Sprite" parent="left"]
+[node name="little_cindy" type="Sprite" parent="left_capsule"]
 position = Vector2( -53.141, -0.0594406 )
 rotation = 4.71239
 texture = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="left"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="left_capsule"]
 position = Vector2( -61.387, -0.477428 )
 shape = SubResource( 2 )
 
-[node name="right" type="KinematicBody2D" parent="."]
+[node name="right_capsule" type="KinematicBody2D" parent="."]
 collision_mask = 6
 
-[node name="little_timmy" type="Sprite" parent="right"]
+[node name="little_timmy" type="Sprite" parent="right_capsule"]
 position = Vector2( 53.5951, 3.8147e-06 )
 rotation = 1.5708
 texture = ExtResource( 6 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="right"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="right_capsule"]
 position = Vector2( 61.8784, -0.369186 )
 shape = SubResource( 3 )
 
-[node name="down" type="KinematicBody2D" parent="."]
+[node name="bot_capsule" type="KinematicBody2D" parent="."]
 collision_mask = 6
 
-[node name="dr_buccatelli" type="Sprite" parent="down"]
+[node name="dr_buccatelli" type="Sprite" parent="bot_capsule"]
 position = Vector2( 0, 53 )
 rotation = 3.14159
 texture = ExtResource( 5 )
 hframes = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="down"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bot_capsule"]
 position = Vector2( 0.159949, 60.8743 )
 shape = SubResource( 4 )
 
