@@ -8,19 +8,19 @@
 [ext_resource path="res://assets/little_timmy.png" type="Texture" id=6]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 20.9402
+radius = 23.966
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 20.5837
+radius = 24.673
 
 [sub_resource type="CircleShape2D" id=3]
-radius = 19.7441
+radius = 24.3153
 
 [sub_resource type="CircleShape2D" id=4]
-radius = 21.3456
+radius = 25.0536
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 27.0902, 25.2913 )
+extents = Vector2( 32.0925, 32.3187 )
 
 [node name="Main" type="KinematicBody2D"]
 collision_mask = 6
@@ -42,6 +42,18 @@ hframes = 2
 position = Vector2( 0.057461, -61.587 )
 shape = SubResource( 1 )
 
+[node name="up2" type="Area2D" parent="."]
+collision_mask = 6
+
+[node name="angsty_teen" type="Sprite" parent="up2"]
+position = Vector2( -0.0245819, -53.0703 )
+texture = ExtResource( 4 )
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="up2"]
+position = Vector2( 0.057461, -61.587 )
+shape = SubResource( 1 )
+
 [node name="left" type="KinematicBody2D" parent="."]
 collision_mask = 6
 
@@ -54,6 +66,18 @@ texture = ExtResource( 2 )
 position = Vector2( -61.387, -0.477428 )
 shape = SubResource( 2 )
 
+[node name="left2" type="Area2D" parent="."]
+collision_mask = 6
+
+[node name="little_cindy" type="Sprite" parent="left2"]
+position = Vector2( -53.141, -0.0594406 )
+rotation = -1.5708
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="left2"]
+position = Vector2( -61.387, -0.477428 )
+shape = SubResource( 2 )
+
 [node name="right" type="KinematicBody2D" parent="."]
 collision_mask = 6
 
@@ -63,6 +87,18 @@ rotation = 1.5708
 texture = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="right"]
+position = Vector2( 61.8784, -0.369186 )
+shape = SubResource( 3 )
+
+[node name="right2" type="Area2D" parent="."]
+collision_mask = 6
+
+[node name="little_timmy" type="Sprite" parent="right2"]
+position = Vector2( 53.5951, 3.8147e-06 )
+rotation = 1.5708
+texture = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="right2"]
 position = Vector2( 61.8784, -0.369186 )
 shape = SubResource( 3 )
 
@@ -79,6 +115,25 @@ hframes = 2
 position = Vector2( 0.159949, 60.8743 )
 shape = SubResource( 4 )
 
+[node name="down2" type="Area2D" parent="."]
+collision_mask = 6
+
+[node name="dr_buccatelli" type="Sprite" parent="down2"]
+position = Vector2( 0, 53 )
+rotation = 3.14159
+texture = ExtResource( 5 )
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="down2"]
+position = Vector2( 0.159949, 60.8743 )
+shape = SubResource( 4 )
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
+shape = SubResource( 5 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
 z_index = 1
 shape = SubResource( 5 )

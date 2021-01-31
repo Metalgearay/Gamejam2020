@@ -13,7 +13,7 @@ func init(input_direction, input_speed, input_pos):
 	pos = input_pos
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	connect("area_enter", self, "_on_area_enter")
 
 func _process(delta):
 	pos = self.position
@@ -26,3 +26,5 @@ func _process(delta):
 	pos += direction * speed * delta
 	self.position = pos
 
+func _on_area_enter(area):
+	print("here")
