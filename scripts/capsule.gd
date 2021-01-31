@@ -17,7 +17,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
+func is_ejected():
+	return ejected
 func _process(delta):
 	if ejecting == true:
 		if self.position.y > -600 or self.position.y<960:

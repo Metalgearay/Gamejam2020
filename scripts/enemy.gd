@@ -43,6 +43,12 @@ func _physics_process(delta):
 			bullets_fired = true
 			
 	move_and_slide(direction * speed)
+	for i in get_slide_count():
+		var collision = get_slide_collision(i)
+		print(collision.collider.name)
+		if "capsule" in collision.collider.name:
+			if collision.collider.is_ejected():
+				self.queue_free()
 
 func _process(delta):
 	var pos = position

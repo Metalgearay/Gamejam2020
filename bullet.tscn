@@ -7,7 +7,6 @@
 radius = 9.13643
 
 [node name="bullet" type="Area2D"]
-visible = false
 collision_layer = 4
 script = ExtResource( 2 )
 

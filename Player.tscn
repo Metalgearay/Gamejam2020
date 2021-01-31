@@ -54,6 +54,7 @@ script = ExtResource( 7 )
 position = Vector2( -53.141, -0.0594406 )
 rotation = 4.71239
 texture = ExtResource( 2 )
+hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="left_capsule"]
 position = Vector2( -61.387, -0.477428 )
@@ -67,6 +68,7 @@ script = ExtResource( 7 )
 position = Vector2( 53.5951, 3.8147e-06 )
 rotation = 1.5708
 texture = ExtResource( 6 )
+hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="right_capsule"]
 position = Vector2( 61.8784, -0.369186 )
@@ -89,7 +91,7 @@ shape = SubResource( 4 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
 shape = SubResource( 5 )
-[connection signal="eject" from="." to="left_capsule" method="_on_Ship_eject"]
-[connection signal="eject" from="." to="right_capsule" method="_on_Ship_eject"]
 [connection signal="eject" from="." to="bot_capsule" method="_on_Ship_eject"]
 [connection signal="eject" from="." to="top_capsule" method="_on_Ship_eject"]
+[connection signal="eject" from="." to="left_capsule" method="_on_Ship_eject"]
+[connection signal="eject" from="." to="right_capsule" method="_on_Ship_eject"]
