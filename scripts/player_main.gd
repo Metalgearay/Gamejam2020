@@ -14,6 +14,7 @@ func _ready():
 
 func jetteson():
 	var pod_to_eject = ""
+	var log_text = get_tree().get_root().get_node("MainGame/GUI-Helper/GUI_Side/TextureRect/RichTextLabel")
 	if Input.is_action_pressed("eject_up") and not launched["up"]:
 		pod_to_eject = $top_capsule
 		direction = Vector2(0, -1)
