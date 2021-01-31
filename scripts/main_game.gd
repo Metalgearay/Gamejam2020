@@ -18,6 +18,10 @@ func _process(delta):
 func _on_MobTimer_timeout():
 	# Create a Mob instance and add it to the scene.
 	var mob = Mob.instance()
-	mob.position =  Vector2(rng.randfn(390,50),-100)
+	mob.position =  Vector2(rng.randfn(300,50),-100)
 	mob.set_direction(Vector2(0,100))
 	get_parent().call_deferred("add_child",mob)
+	var mob2 = Mob.instance()
+	mob2.position =  Vector2(rng.randfn(460,50),-100)
+	mob2.set_direction(Vector2(0,100))
+	get_parent().call_deferred("add_child",mob2)
