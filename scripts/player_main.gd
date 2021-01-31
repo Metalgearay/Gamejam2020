@@ -4,13 +4,12 @@ export var speed = 400
 # var a = 2
 # var b = "text"
 var move_direction = Vector2(0,0)
-var health = 10
+export var health = 10
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	move_loop()
+	pass
 
 func move_loop():
-	print(health)
 	move_direction.x = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"))
 	move_direction.y = int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("ui_up"))
 	
@@ -42,7 +41,7 @@ func move_loop():
 		
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+
+func _physics_process(delta):
 	move_loop()
-func _on_body_entered(body):
-	print (body)
+

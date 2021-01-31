@@ -28,6 +28,7 @@ config/icon="res://icon.png"
 
 window/size/width=1280
 window/size/height=960
+window/size/resizable=false
 window/stretch/aspect="keep"
 
 [gdnative]
@@ -45,4 +46,5 @@ singletons=[ "res://git_api.gdnlib" ]
 
 [rendering]
 
+environment/default_clear_color=Color( 0, 0, 0, 1 )
 environment/default_environment="res://default_env.tres"

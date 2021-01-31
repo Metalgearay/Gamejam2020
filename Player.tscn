@@ -51,6 +51,7 @@ collision_mask = 6
 position = Vector2( -53.141, -0.0594406 )
 rotation = 4.71239
 texture = ExtResource( 2 )
+hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="left_capsule"]
 position = Vector2( -61.387, -0.477428 )
@@ -63,6 +64,7 @@ collision_mask = 6
 position = Vector2( 53.5951, 3.8147e-06 )
 rotation = 1.5708
 texture = ExtResource( 6 )
+hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="right_capsule"]
 position = Vector2( 61.8784, -0.369186 )
