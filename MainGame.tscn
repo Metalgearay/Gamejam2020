@@ -32,6 +32,8 @@ wait_time = 4.0
 
 [node name="Ship" parent="." instance=ExtResource( 2 )]
 position = Vector2( 333.241, 263.336 )
+speed = null
+health = null
 
 [node name="StartPosition" type="Position2D" parent="."]
 position = Vector2( 410.491, 719.819 )
