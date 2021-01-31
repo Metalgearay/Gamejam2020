@@ -16,11 +16,20 @@ func _ready():
 	pass # Replace with function body.
 
 func _process(delta):
-	pos = self.position
-	if pos.x > get_viewport().size.x or pos.y > get_viewport().size.y:
+	var overlapping = get_overlapping_bodies()
+	for x in overlapping:
+		if x.name == "Ship":
+			x.health -=1
 			state = -1
+		elif "capsule" in x.name:
+			x.get_parent().health -=1
+			state = -1
+			
+	#pos = get_global_position()
+	#if pos.x > 1500 or pos.x < -50 or pos.y >  1000 or pos.y <-50:
+	#		state = -1
 	if state == -1:
-		set_process(false)
+		get_parent().remove_child(self)
 		queue_free()
 		return
 	pos += direction * speed * delta

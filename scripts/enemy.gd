@@ -31,9 +31,11 @@ func _physics_process(delta):
 	#	flag = true 
 	if position.y > 0:
 		if exit_side == "Right":	
-			direction = direction.move_toward(Vector2(1,0),0.006)
+			if direction.distance_to(Vector2(1,0)) > 0.006:
+				direction = direction.move_toward(Vector2(1,0),0.006)
 		else:
-			direction = direction.move_toward(Vector2(-1,0),0.006)
+			if direction.distance_to(Vector2(-1,0)) > 0.006:
+				direction = direction.move_toward(Vector2(-1,0),0.006)
 		if not bullets_fired and position.y > 100:
 			var p = pattern.instance()
 			add_child(p)
@@ -42,7 +44,12 @@ func _physics_process(delta):
 			
 	move_and_slide(direction * speed)
 
-	
+func _process(delta):
+	var pos = position
+	if pos.x > get_viewport().size.x+100 or pos.x < -100:
+		set_process(false)
+		queue_free()
+		return
 
 func _on_timer_timeout():
 	var p = pattern.instance()

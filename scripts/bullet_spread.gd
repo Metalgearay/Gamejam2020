@@ -46,7 +46,7 @@ func circle_spawn(x,y):
 		var direction = Vector2(cos(angle), sin(angle))
 		var pos = center + direction * radius
 		var node = b.instance()
-		node.init(direction, 200, pos)
+		node.init(direction, 200, center)
 		bullet_origin.add_child(node)
 
 	# Rotate one step
@@ -69,7 +69,7 @@ func arc_spawn(x,y):
 		var direction = Vector2(cos(angle), sin(angle))
 		var pos = center + direction * radius
 		var node = b.instance()
-		node.init(direction, 200, pos)
+		node.init(direction, 200, center)
 		bullet_origin.add_child(node)
 
 	# Rotate one step
