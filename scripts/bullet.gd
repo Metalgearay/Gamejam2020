@@ -25,3 +25,4 @@ func _process(delta):
 		return
 	pos += direction * speed * delta
 	self.position = pos
+
